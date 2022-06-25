@@ -1,14 +1,6 @@
-module.exports = (str, bracketsConfig) => {
+module.exports = function check(str, bracketsConfig) {
+  let arr = [];
   let brackets = Object.fromEntries(bracketsConfig);
-  for (var i = 0; i<str.length; i++){
-    if (!thereIsPair()) return false;
-  }
-  function thereIsPair() {
-    let mirror = brackets[str[i]];
-    for (i++; i<str.length; i++){
-      if (str[i] === mirror) return true;
-      if (!thereIsPair()) return false;
-      }
-    }
-    return true;
-}
+  for (let i = 0; i < str.length; i++) {
+    (arr.length === 0) ? arr.push(str[i]) : (str[i] == brackets[arr[arr.length - 1]]) ? arr.pop() : arr.push(str[i]);
+  }  return !stack.length; }
